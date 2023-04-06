@@ -92,6 +92,8 @@ test:
     - dingo_train_condor --help
   requires:
     - pip
+    # forcibly install uptodate xarray so that pip check doesn't choke on arviz
+    - xarray >=0.21.0
 
 about:
   home: https://github.com/dingo-gw/dingo
