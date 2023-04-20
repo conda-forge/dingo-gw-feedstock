@@ -27,6 +27,7 @@ build:
     - dingo_pipe_generation = dingo.gw.pipe.data_generation:main
     - dingo_pipe_plot = dingo.gw.pipe.plot:main
     - dingo_pipe_sampling = dingo.gw.pipe.sampling:main
+    - dingo_pt_to_hdf5 = dingo.core.utils.pt_to_hdf5:main
     - dingo_merge_datasets = dingo.gw.dataset.utils:merge_datasets_cli
     - dingo_merge_asd_datasets = dingo.gw.noise.utils:merge_datasets_cli
     - dingo_result = dingo.gw.pipe.dingo_result:main
@@ -90,6 +91,7 @@ test:
     - dingo_pipe_importance_sampling --help
     - dingo_pipe_plot --help
     - dingo_pipe_sampling --help
+    - dingo_pt_to_hdf5 --help
     - dingo_result --help
     - dingo_train --help
     - dingo_train_condor --help
