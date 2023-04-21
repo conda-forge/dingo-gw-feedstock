@@ -1,5 +1,5 @@
 {% set name = "dingo-gw" %}
-{% set version = "0.4.3" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dingo-gw-{{ version }}.tar.gz
-  sha256: 2260cdadd4bfc1418639f37e997a78492fc839860d7ba8cb96d2f47ccad9def1
+  sha256: 0582d0ddca38455b7b4e94f8b7741991dce4d4c9cf679d1ffff95b9fe4a12dc9
   patches:
     - no-lalsuite.patch
 
@@ -20,15 +20,17 @@ build:
     - dingo_generate_asd_dataset = dingo.gw.noise.generate_dataset:generate_dataset
     - dingo_generate_dataset = dingo.gw.dataset.generate_dataset:main
     - dingo_generate_dataset_dag = dingo.gw.dataset.generate_dataset_dag:main
+    - dingo_generate_synthetic_asd_dataset = dingo.gw.noise.synthetic.generate_dataset:main
     - dingo_ls = dingo.gw.ls_cli:ls
-    - dingo_pipe = dingo.gw.pipe.main:main
-    - dingo_pipe_importance_sampling = dingo.gw.pipe.importance_sampling:main
-    - dingo_pipe_generation = dingo.gw.pipe.data_generation:main
-    - dingo_pipe_plot = dingo.gw.pipe.plot:main
-    - dingo_pipe_sampling = dingo.gw.pipe.sampling:main
+    - dingo_pipe = dingo.pipe.main:main
+    - dingo_pipe_importance_sampling = dingo.pipe.importance_sampling:main
+    - dingo_pipe_generation = dingo.pipe.data_generation:main
+    - dingo_pipe_plot = dingo.pipe.plot:main
+    - dingo_pipe_sampling = dingo.pipe.sampling:main
+    - dingo_pt_to_hdf5 = dingo.core.utils.pt_to_hdf5:main
     - dingo_merge_datasets = dingo.gw.dataset.utils:merge_datasets_cli
     - dingo_merge_asd_datasets = dingo.gw.noise.utils:merge_datasets_cli
-    - dingo_result = dingo.gw.pipe.dingo_result:main
+    - dingo_result = dingo.pipe.dingo_result:main
     - dingo_train = dingo.gw.training:train_local
     - dingo_train_condor = dingo.gw.training.train_pipeline_condor:train_condor
   noarch: python
@@ -66,6 +68,7 @@ requirements:
     - scipy
     - threadpoolctl
     - torchvision
+    - tqdm
 
 test:
   imports:
@@ -79,6 +82,7 @@ test:
     - dingo_generate_asd_dataset --help
     - dingo_generate_dataset --help
     - dingo_generate_dataset_dag --help
+    - dingo_generate_synthetic_asd_dataset --help
     - dingo_ls --help
     - dingo_merge_asd_datasets --help
     - dingo_merge_datasets --help
@@ -87,6 +91,7 @@ test:
     - dingo_pipe_importance_sampling --help
     - dingo_pipe_plot --help
     - dingo_pipe_sampling --help
+    - dingo_pt_to_hdf5 --help
     - dingo_result --help
     - dingo_train --help
     - dingo_train_condor --help
