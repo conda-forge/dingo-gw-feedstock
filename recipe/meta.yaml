@@ -46,7 +46,7 @@ requirements:
   run:
     - astropy
     - bilby
-    - bilby_pipe
+    - bilby_pipe >=1.2.1
     - configargparse
     - corner
     - cryptography
