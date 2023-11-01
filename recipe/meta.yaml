@@ -60,8 +60,8 @@ requirements:
     - pycondor
     - pyopenssl
     - python >=3.8
-    - python-lal
-    - python-lalsimulation
+    - python-lal >=7.3.1
+    - python-lalsimulation >=5.2.0
     - pytorch
     - pyyaml
     - scikit-learn
