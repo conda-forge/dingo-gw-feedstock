@@ -6,7 +6,7 @@ index 10f3721..600f693 100644
      "glasflow",
      "gwpy",
      "h5py",
--    "lalsuite>=7.11",
+-    "lalsuite>=7.15",
      "numpy",
      "pandas",
      "pesummary",
