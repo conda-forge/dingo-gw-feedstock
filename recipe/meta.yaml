@@ -59,6 +59,7 @@ requirements:
     - pycbc
     - pycondor
     - pyopenssl
+    - pyseobnr
     - python >=3.8
     - python-lal >=7.3.1
     - python-lalsimulation >=5.2.0
