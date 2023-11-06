@@ -52,7 +52,7 @@ requirements:
     - glasflow
     - gwpy
     - h5py
-    - matplotlib
+    - matplotlib-base
     - numpy
     - pandas
     - pesummary
