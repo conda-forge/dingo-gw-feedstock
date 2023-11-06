@@ -49,22 +49,22 @@ requirements:
     - bilby_pipe >=1.2.1
     - configargparse
     - corner
-    - cryptography
     - glasflow
     - gwpy
     - h5py
+    - matplotlib
     - numpy
     - pandas
     - pesummary
     - pycbc
     - pycondor
-    - pyopenssl
     - pyseobnr
     - python >=3.8
     - python-lal >=7.3.1
     - python-lalsimulation >=5.2.0
     - pytorch
     - pyyaml
+    - requests
     - scikit-learn
     - scipy
     - threadpoolctl
@@ -75,7 +75,7 @@ test:
   imports:
     - dingo
   commands:
-    # - pip check  # Failing due to pyseobnr, sxs packages
+    - pip check
     - dingo_analyze_event --help
     - dingo_append_training_stage --help
     - dingo_build_svd --help
