@@ -2,11 +2,11 @@ diff --git a/pyproject.toml b/pyproject.toml
 index 10f3721..600f693 100644
 --- a/pyproject.toml
 +++ b/pyproject.toml
-@@ -34,7 +34,6 @@ dependencies = [
+@@ -33,7 +33,6 @@ dependencies = [
      "glasflow",
      "gwpy",
      "h5py",
 -    "lalsuite>=7.15",
+     "matplotlib",
      "numpy",
      "pandas",
-     "pesummary",
