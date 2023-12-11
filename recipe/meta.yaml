@@ -1,5 +1,5 @@
 {% set name = "dingo-gw" %}
-{% set version = "0.5.8" %}
+{% set version = "0.5.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dingo-gw-{{ version }}.tar.gz
-  sha256: 53f712810dfeadd5db37976207a1836292d21f2c8ab028c409bb7c334578ac64
+  sha256: 46c3280c9f5cd932c72f347813c7998cef4bdd6a95413a9d0be392b36fe88a54
   patches:
     - no-lalsuite.patch
 
@@ -46,7 +46,7 @@ requirements:
   run:
     - astropy
     - bilby
-    - bilby_pipe >=1.2.1
+    - bilby_pipe >=1.3
     - configargparse
     - corner
     - glasflow
