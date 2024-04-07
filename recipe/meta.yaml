@@ -1,5 +1,5 @@
 {% set name = "dingo-gw" %}
-{% set version = "0.5.9" %}
+{% set version = "0.5.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dingo-gw-{{ version }}.tar.gz
-  sha256: 46c3280c9f5cd932c72f347813c7998cef4bdd6a95413a9d0be392b36fe88a54
+  sha256: 9fa8719a38fe1399e9466cbd1220edb3ad30ae6ad83acdf579ac3fffb16bc096
   patches:
     - no-lalsuite.patch
 
