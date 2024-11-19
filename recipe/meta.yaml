@@ -46,7 +46,7 @@ requirements:
   run:
     - astropy
     - bilby
-    - bilby_pipe ==1.4
+    - bilby_pipe ==1.4.2
     - configargparse
     - corner
     - glasflow
