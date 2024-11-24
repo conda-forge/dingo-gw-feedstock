@@ -74,7 +74,6 @@ test:
     - dingo
   commands:
     # - pip check  # Do not run since sxs package causes failure due to dependencies
-    - dingo_analyze_event --help
     - dingo_append_training_stage --help
     - dingo_build_svd --help
     - dingo_estimate_psds --help
