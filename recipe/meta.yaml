@@ -34,7 +34,7 @@ build:
     - dingo_train_condor = dingo.gw.training.train_pipeline_condor:train_condor
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -43,7 +43,7 @@ requirements:
     - setuptools-scm >=6.2
     - pip
   run:
-    - astropy
+    - astropy-base
     - bilby
     - bilby_pipe ==1.4.2
     - configargparse
