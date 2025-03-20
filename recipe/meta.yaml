@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: f097e88cbc0444da2a53502eb4f6b7c62c603c1d20ac1d0c23c249f0dfae3480
   patches:
     - no-lalsuite.patch
@@ -34,11 +34,11 @@ build:
     - dingo_train_condor = dingo.gw.training.train_pipeline_condor:train_condor
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=62.0
     - setuptools-scm >=6.2
     - pip
@@ -57,7 +57,7 @@ requirements:
     - pesummary
     - pycbc
     - pycondor
-    - python >=3.8
+    - python >={{ python_min }}
     - python-lal >=7.3.1
     - python-lalsimulation >=5.2.0
     - pytorch
@@ -98,6 +98,7 @@ test:
     - pip
     # forcibly install uptodate xarray so that pip check doesn't choke on arviz
     - xarray >=0.21.0
+    - python {{ python_min }}
 
 about:
   home: https://github.com/dingo-gw/dingo
