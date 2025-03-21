@@ -1,5 +1,5 @@
 {% set name = "dingo-gw" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: f097e88cbc0444da2a53502eb4f6b7c62c603c1d20ac1d0c23c249f0dfae3480
+  sha256: a79921396b6b07da76bff03d5f541e70b5be68b020325c7c7b5428016130bf8c
   patches:
     - no-lalsuite.patch
 
@@ -34,7 +34,7 @@ build:
     - dingo_train_condor = dingo.gw.training.train_pipeline_condor:train_condor
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
