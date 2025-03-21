@@ -45,7 +45,7 @@ requirements:
     - setuptools-scm >=6.2
     - pip
   run:
-    - astropy
+    - astropy-base
     - bilby
     - bilby_pipe ==1.4.2
     - configargparse
