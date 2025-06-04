@@ -1,7 +1,8 @@
 {% set name = "dingo-gw" %}
-{% set version = "0.8.3" %}
+{% set version = "0.8.4" %}
 
 {% set python_min = "3.10" %}
+{% set python_max = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 60fc85c483b834a7a205f76dd1492d3505fb94a70ccdbc719e1b67d8e79a5211
+  sha256: 87b66dd616bbd03fb99eb67b74c69a2486001f20ca1192f78030c51b351ce837
   patches:
     - no-lalsuite.patch
 
@@ -40,7 +41,7 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python >={{ python_min }},<{{ python_max }}
     - setuptools >=62.0
     - setuptools-scm >=6.2
     - pip
@@ -59,7 +60,7 @@ requirements:
     - pesummary
     - pycbc
     - pycondor
-    - python >={{ python_min }}
+    - python >={{ python_min }},<{{ python_max }}
     - python-lal >=7.3.1
     - python-lalsimulation >=5.2.0
     - pytorch
@@ -100,7 +101,7 @@ test:
     - pip
     # forcibly install uptodate xarray so that pip check doesn't choke on arviz
     - xarray >=0.21.0
-    - python {{ python_min }}
+    - python >={{ python_min }},<{{ python_max }}
 
 about:
   home: https://github.com/dingo-gw/dingo
