@@ -2,6 +2,7 @@
 {% set version = "0.8.4" %}
 
 {% set python_min = "3.10" %}
+{% set python_max = "3.12.6" %}
 
 package:
   name: {{ name|lower }}
@@ -40,7 +41,7 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python >={{ python_min }},<={{ python_max }}
     - setuptools >=62.0
     - setuptools-scm >=6.2
     - pip
@@ -59,7 +60,7 @@ requirements:
     - pesummary
     - pycbc
     - pycondor
-    - python >={{ python_min }}
+    - python >={{ python_min }},<={{ python_max }}
     - python-lal >=7.3.1
     - python-lalsimulation >=5.2.0
     - pytorch
@@ -100,7 +101,7 @@ test:
     - pip
     # forcibly install uptodate xarray so that pip check doesn't choke on arviz
     - xarray >=0.21.0
-    - python {{ python_min }}
+    - python >={{ python_min }},<={{ python_max }}
 
 about:
   home: https://github.com/dingo-gw/dingo
