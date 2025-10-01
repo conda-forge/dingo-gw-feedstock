@@ -1,5 +1,5 @@
 {% set name = "dingo-gw" %}
-{% set version = "0.8.5" %}
+{% set version = "0.8.6" %}
 
 {% set python_min = "3.10" %}
 {% set python_max = "3.12" %}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: f48955c597d089586677acfb5bba152fc3696c3ee84a11bf68271c3d2ee08680
+  sha256: b8a237c0b17139f18d6b5c9c74f3d56e885775e4532469712ba0b86d4719de76
   patches:
     - no-lalsuite.patch
 
@@ -28,6 +28,7 @@ build:
     - dingo_pipe_importance_sampling = dingo.pipe.importance_sampling:main
     - dingo_pipe_generation = dingo.pipe.data_generation:main
     - dingo_pipe_plot = dingo.pipe.plot:main
+    - dingo_pipe_pp_test = dingo.pipe.pp_test:main
     - dingo_pipe_sampling = dingo.pipe.sampling:main
     - dingo_pt_to_hdf5 = dingo.core.utils.pt_to_hdf5:main
     - dingo_merge_datasets = dingo.gw.dataset.utils:merge_datasets_cli
@@ -48,7 +49,7 @@ requirements:
   run:
     - astropy-base
     - bilby
-    - bilby_pipe ==1.4.2
+    - bilby_pipe
     - configargparse
     - corner
     - glasflow
