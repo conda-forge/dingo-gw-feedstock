@@ -2,7 +2,7 @@
 {% set version = "0.9.6" %}
 
 {% set python_min = "3.10" %}
-{% set python_max = "3.11" %}
+{% set python_max = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -38,7 +38,7 @@ build:
     - dingo_train_condor = dingo.gw.training.train_pipeline_condor:train_condor
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
