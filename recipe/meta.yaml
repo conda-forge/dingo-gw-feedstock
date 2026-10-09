@@ -1,5 +1,5 @@
 {% set name = "dingo-gw" %}
-{% set version = "0.10.1" %}
+{% set version = "0.10.2" %}
 
 {% set python_max = "3.14" %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 60eff5511caa433589e3f7c08847c3c79b7f38993165265b567f7b303a656fbb
+  sha256: c4a6756aa07d94d98f50d10b95f875a6252092d38b14672b557e6158d72d96cb
   patches:
     - no-lalsuite.patch
 
